@@ -1,0 +1,38 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model WordSet {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  isDefault   Boolean  @default(false)
+  ownerUserId String?
+  words       Word[]
+}
+
+model Word {
+  id         String   @id @default(uuid())
+  setId      String
+  sourceText String
+  targetText String
+  addedAt    DateTime @default(now())
+  set        WordSet  @relation(fields: [setId], references: [id])
+  reviews    Review[]
+}
+
+model Review {
+  id                String   @id @default(uuid())
+  wordId            String
+  nextDue           DateTime
+  interval          Int
+  easeFactor        Float
+  reps              Int
+  lastAnswerQuality Int
+  word              Word     @relation(fields: [wordId], references: [id])
+}

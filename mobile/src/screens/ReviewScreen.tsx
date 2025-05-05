@@ -1,4 +1,5 @@
 import { View, Text } from 'react-native';
+import type { RootStackParamList } from '../types';
 
 export default function ReviewScreen() {
   return (

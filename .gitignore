@@ -1,0 +1,20 @@
+# Node.js bağımlılıkları
+node_modules/
+backend/node_modules/
+mobile/node_modules/
+
+# Derleme çıktısı
+**/*.js
+**/*.js.map
+**/*.d.ts
+backend/dist/
+mobile/.expo/
+mobile/web-build/
+
+# Yerel veritabanı ve env
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+backend/.env
+
+# VSCode ayarları
+.vscode/

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2020",               // en az ES2020
+    "module": "commonjs",
+    "experimentalDecorators": true,   // dekoratörleri açar
+    "emitDecoratorMetadata": true,    // metadata üretir
+    "outDir": "./dist",
+    "declaration": true,
+    "skipLibCheck": true,
+    "strict": true
+    // … diğer ayarlar …
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "generated"]
+}
